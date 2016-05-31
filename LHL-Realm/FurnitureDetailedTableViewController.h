@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FurnitureDetailedTableViewController.h
 //  LHL-Realm
 //
 //  Created by Asuka Nakagawa on 2016-05-30.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 
-@interface ViewController : UITableViewController
 
+@interface FurnitureDetailedTableViewController : UITableViewController
 
 @end

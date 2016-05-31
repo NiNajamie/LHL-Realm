@@ -24,7 +24,8 @@ RLM_ARRAY_TYPE(Furniture)
 @property (nonatomic) NSString *roomName;
 
 @property RLMArray<Furniture *><Furniture> *furnitures;
-@property NSInteger furnitureId;
+@property RLMArray<Furniture *><Furniture> *livingFurnitureArray;
+@property NSInteger furnitureID;
 
 @end
 
