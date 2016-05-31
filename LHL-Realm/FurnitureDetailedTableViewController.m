@@ -11,7 +11,7 @@
 #import "ViewController.h"
 
 @interface FurnitureDetailedTableViewController ()
-@property RLMResults<Furniture *> *furnitureArray;
+@property RLMResults<Furniture *> *detailFurnitureArray;
 
 @end
 
@@ -20,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.detailFurnitureArray = [Furniture allObjects];
+    NSLog(@"%@", _room);
     
+    // room has a arrayOfFurniture, display them
     
     
     
@@ -34,14 +37,14 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.furnitureArray count];
+    return [self.room.furnitures count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell" forIndexPath:indexPath];
     
     // Configure the cell...
-        Furniture *furniture = self.furnitureArray[indexPath.row];
+        Furniture *furniture = self.room.furnitures[indexPath.row];
         cell.textLabel.text = furniture.name;
 
     return cell;
@@ -68,14 +71,5 @@
 */
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

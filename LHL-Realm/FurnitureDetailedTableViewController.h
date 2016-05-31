@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
-
+#import "Room.h"
 
 @interface FurnitureDetailedTableViewController : UITableViewController
+
+@property (nonatomic) Room *room;
 
 @end

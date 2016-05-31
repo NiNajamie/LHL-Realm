@@ -8,15 +8,15 @@
 
 #import "ViewController.h"
 #import "Room.h"
+#import "FurnitureDetailedTableViewController.h"
 
 
 @interface ViewController ()
 
 // RLMResults is like array
-@property RLMResults<Furniture *> *furnitureArray;
+//@property RLMResults<Furniture *> *furnitureArray;
 @property RLMResults<Room *> *roomArray;
 
-//@property RLMResults<Room *> *aRoomArray;
 
 @property UITextField *textField;
 
@@ -123,7 +123,7 @@
         // update array by quering realm
         // reloadData to display the array with newRoom
         self.roomArray = [Room allObjects];
-        self.furnitureArray = [Furniture allObjects];
+//        self.furnitureArray = [Furniture allObjects];
         
         [self.tableView reloadData];
     }];
@@ -148,6 +148,22 @@
     
 //    UIAlertController * alert1 = [UIAlertController alertControllerWithTitle:@"Adding" message:@"Enter new furniture" preferredStyle: UIAlertControllerStyleAlert];
 //        [self presentViewController:alert1 animated:YES completion:nil];
+
+}
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    FurnitureDetailedTableViewController *dvc = segue.destinationViewController;
+    
+    // cell is sender
+    UITableViewCell *cell = (UITableViewCell*) sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    
+    // set specific cell has specific data
+    Room *room = [self.roomArray objectAtIndex:indexPath.row];
+    dvc.room = room;
 
 }
 
