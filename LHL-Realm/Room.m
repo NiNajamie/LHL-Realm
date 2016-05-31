@@ -10,4 +10,8 @@
 
 @implementation Room
 
+//+ (NSString *)primaryKey {
+//    return @"id";
+//}
+
 @end

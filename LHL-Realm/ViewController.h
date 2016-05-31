@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UITableViewController
 
 
 @end

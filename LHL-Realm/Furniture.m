@@ -6,10 +6,12 @@
 //  Copyright © 2016 Asuka Nakagawa. All rights reserved.
 //
 
-#import "Furniture.h"
+#import "Room.h"
 
 @implementation Furniture
 
-
+//+ (NSString *)primaryKey {
+//    return @"name";
+//}
 
 @end
