@@ -16,6 +16,7 @@
 		969196D81CFCC3400067E2E9 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 969196D71CFCC3400067E2E9 /* Room.m */; };
 		969196DE1CFCF42A0067E2E9 /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 969196DD1CFCF42A0067E2E9 /* Furniture.m */; };
 		969196E11CFD2BCB0067E2E9 /* FurnitureDetailedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969196E01CFD2BCB0067E2E9 /* FurnitureDetailedTableViewController.m */; };
+		96ABDD5B1CFE5A8500069507 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96ABDD5A1CFE5A8500069507 /* DetailViewController.m */; };
 		D4009AE1FBBE2854144DF6A5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FB51F9CF1C9EBCD04C719F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		969196DD1CFCF42A0067E2E9 /* Furniture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Furniture.m; sourceTree = "<group>"; };
 		969196DF1CFD2BCB0067E2E9 /* FurnitureDetailedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FurnitureDetailedTableViewController.h; sourceTree = "<group>"; };
 		969196E01CFD2BCB0067E2E9 /* FurnitureDetailedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FurnitureDetailedTableViewController.m; sourceTree = "<group>"; };
+		96ABDD591CFE5A8500069507 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		96ABDD5A1CFE5A8500069507 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		A8EEE922DDE00A4349DA00BD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A8FB51F9CF1C9EBCD04C719F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26502CC85781C9D4CB61F06 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				969196D61CFCC3400067E2E9 /* Room.h */,
 				969196D71CFCC3400067E2E9 /* Room.m */,
 				969196DD1CFCF42A0067E2E9 /* Furniture.m */,
+				96ABDD591CFE5A8500069507 /* DetailViewController.h */,
+				96ABDD5A1CFE5A8500069507 /* DetailViewController.m */,
 				969196DF1CFD2BCB0067E2E9 /* FurnitureDetailedTableViewController.h */,
 				969196E01CFD2BCB0067E2E9 /* FurnitureDetailedTableViewController.m */,
 				969196C51CFCBAF60067E2E9 /* ViewController.h */,
@@ -244,6 +249,7 @@
 				969196C41CFCBAF60067E2E9 /* AppDelegate.m in Sources */,
 				969196D81CFCC3400067E2E9 /* Room.m in Sources */,
 				969196C11CFCBAF60067E2E9 /* main.m in Sources */,
+				96ABDD5B1CFE5A8500069507 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,11 @@
 #import "ViewController.h"
 
 @interface FurnitureDetailedTableViewController ()
-@property RLMResults<Furniture *> *detailFurnitureArray;
+//@property RLMResults<Furniture *> *detailFurnitureArray;
+
+
+@property UITextField *textField1;
+
 
 @end
 
@@ -20,12 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.detailFurnitureArray = [Furniture allObjects];
-    NSLog(@"%@", _room);
-    
-    // room has a arrayOfFurniture, display them
-    
-    
+//    self.detailFurnitureArray = [Furniture allObjects];
+//    NSLog(@"%@", _room);
     
 }
 
@@ -37,18 +37,72 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return [self.room.furnitures count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+        // room has a arrayOfFurnitures, display them
         Furniture *furniture = self.room.furnitures[indexPath.row];
         cell.textLabel.text = furniture.name;
 
     return cell;
 }
+
+- (IBAction)furniturePressed:(UIButton *)sender {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Adding" message:@"Enter new furniture" preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction *save = [UIAlertAction actionWithTitle:@"SAVE" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        // create empty newFurniture object
+        Furniture *newFurniture = [[Furniture alloc] init];
+        NSLog(@"_textField.text %@", _textField1.text);
+        
+        newFurniture.name = _textField1.text;
+        
+        // Persist(save) data
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm transactionWithBlock:^{
+            [self.room.furnitures addObject:newFurniture];
+        }];
+        // update array by quering realm
+        // reloadData to display the array with newRoom
+//        self.detailFurnitureArray = [Furniture allObjects];
+        
+        [self.tableView reloadData];
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alert addAction:save];
+    [alert addAction:cancel];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Add furniture";
+        // get userinput to set new furniture
+        _textField1 = textField;
+    }];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+
+    
+}
+
+
+
+/*
+ #pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ 
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.

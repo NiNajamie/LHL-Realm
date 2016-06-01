@@ -99,6 +99,7 @@
         Room *newRoom = [[Room alloc] init];
         NSLog(@"_textField.text %@", _textField.text);
         
+        // put newRoom's roomName from the userinput
         newRoom.roomName = _textField.text;
         
         Furniture *table1 = [[Furniture alloc] init];
@@ -123,7 +124,6 @@
         // update array by quering realm
         // reloadData to display the array with newRoom
         self.roomArray = [Room allObjects];
-//        self.furnitureArray = [Furniture allObjects];
         
         [self.tableView reloadData];
     }];
@@ -144,12 +144,6 @@
     
 }
 
-- (IBAction)furnitureButtonPressed:(UIBarButtonItem *)sender {
-    
-//    UIAlertController * alert1 = [UIAlertController alertControllerWithTitle:@"Adding" message:@"Enter new furniture" preferredStyle: UIAlertControllerStyleAlert];
-//        [self presentViewController:alert1 animated:YES completion:nil];
-
-}
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -170,7 +164,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
